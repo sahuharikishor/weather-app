@@ -1,0 +1,62 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Weather App</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+     
+</head>
+<body>
+
+<div class="app-container">
+
+    <div class="weather-card">
+        <h1 class="title">🌤 Weather Now</h1>
+
+        <form method="POST" class="search-box">
+            {% csrf_token %}
+            <input type="text" name="city" placeholder="Enter city name" required>
+            <button type="submit">Search</button>
+        </form>
+
+        {% if data %}
+        <div class="weather-info">
+            <h2>{{ city }}, {{ data.country_code }}</h2>
+
+            <div class="temp">
+                {{ data.temp }} °C
+            </div>
+
+            <div class="details">
+                <div>
+                    <span>💧 Humidity</span>
+                    <p>{{ data.humidity }}%</p>
+                </div>
+                <div>
+                    <span>🧱 Pressure</span>
+                    <p>{{ data.pressure }} hPa</p>
+                </div>
+                <div>
+                    <span>📍 Location</span>
+                    <p>{{ data.coordinate }}</p>
+                </div>
+                <div>
+                    <span>💨 Wind</span>
+                    <p>{{ data.wind }} KM/h</p>
+                </div>
+            </div>
+        </div>
+        {% else %}
+        <p class="hint">Enter a city to see weather details 🌍</p>
+        {% endif %}
+
+    </div>
+
+</div>
+
+</body>
+</html>

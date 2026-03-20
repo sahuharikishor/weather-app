@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Weather App</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  </head>
+  <body>
+      <nav class="row" style="background-color: grey; color: white; margin-bottom: 40px;">
+        <div >
+            <h1 style="padding: 10px;">Weather App</h1>
+            <br>
+
+      </nav>
+    <div class="container">
+        
+            <center class="row">
+                <form class="col-md-6 col-md-offset-3" action="" method="POST">
+                    <!-- {% csrf_token %} -->
+                    <div class="input-group">
+                        <input type="text" name="city" class="form-control" placeholder="Patna">
+                    </div>
+                    <div class="btn-group">
+                        <button type="submit" class="btn btn-primary">
+                            search
+                        </button>
+                    </div>
+
+                </form>
+            </center>
+            <div class="row">
+                <div class="col-md-6 col-md-offset-3">
+                    <h2>City name : {{city}}</h2>
+                    <h3> Country code : {{data.country_code}}</h3>
+                    <h5>Coordinates :{{data.coordinate}}</h5>
+                    <h5>Temp : {{data.temp}} k</h5>
+                    <h5>Pressur :{{data.pressure}}</h5>
+                    <h5>Humidity :{{data.humidity}}</h5>
+                    <h5>Wind :{{data.wind}}</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+  </body>
+</html>
