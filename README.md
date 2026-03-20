@@ -30,7 +30,7 @@ The application uses **Django as backend** to fetch and process API data and dis
 
 ### Weather Dashboard
 
-![Weather App UI](Assets/screenshot.png)
+![Weather App UI](Assets/Screenshot.png)
 
 ---
 
